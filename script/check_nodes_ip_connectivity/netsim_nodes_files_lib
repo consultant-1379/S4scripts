@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# Constants declaration
+
+readonly NODES_FILES_PATH='/opt/ericsson/enmutils/etc/nodes/'
+
+# Functions
+
+#######################################
+# Get ip address of a node from nodes files.
+# Globals:
+#   NODES_FILES_PATH
+# Arguments:
+#   Name of the node
+# Outputs:
+#   Ip address of the node
+#######################################
+get_ip_from_netsim_nodes(){
+  local node_name=$1
+  local ip_address
+  ip_address=$(grep -w $node_name ${NODES_FILES_PATH}* | awk -F',' '{print $2}')
+  echo $ip_address
+}
+
+#######################################
+# Get hostname of Netsim VM from nodes files.
+# Globals:
+#   NODES_FILES_PATH
+# Arguments:
+#   Name of the node
+# Outputs:
+#   Hostname of Netsim VM hosting the node
+#######################################
+get_netsim_host_from_netsim_nodes(){
+  local node_name=$1
+  local netsim_host
+  netsim_host=$(grep -w $node_name ${NODES_FILES_PATH}* | awk -F',' '{print $25}')
+  echo $netsim_host
+}
+
+#######################################
+# Check that nodes files dir/files exist.
+# Globals:
+#   NODES_FILES_PATH
+# Arguments:
+#   None
+# Outputs:
+#   0: directory/files exist 1: directory empty (or does not exist)
+#######################################
+check_nodes_files_exists(){
+  if [ -n "$(ls -A $NODES_FILES_PATH 2>/dev/null)" ];then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#######################################
+# Get netype from nodes files.
+# Globals:
+#   NODES_FILES_PATH
+# Arguments:
+#   Name of the node
+# Outputs:
+#   Netype associated to the node
+#######################################
+get_netype_from_netsim_nodes(){
+  local node_name=$1
+  local netype
+  netype=$(grep -w $node_name ${NODES_FILES_PATH}* | awk -F',' '{print $21}')
+  echo $netype
+}
+

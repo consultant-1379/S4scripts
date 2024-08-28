@@ -1,0 +1,38 @@
+#!/usr/bin/expect -f
+#
+set host [lindex $argv 0]
+set ilo_username [lindex $argv 1]
+set ilo_password [lindex $argv 2]
+set password [lindex $argv 3]
+set cmd [lindex $argv 4]
+
+set timeout -1
+spawn ssh $ilo_username@$host
+match_max 1000
+expect "password: "
+send -- "$ilo_password\r"
+expect "hpiLO->"
+sleep 2
+send -- "stop /system1/oemhp_vsp1\r"
+expect "COMMAND COMPLETED"
+send -- "vsp\r"
+sleep 3
+expect "login"
+send -- "support\r"
+expect "Password:"
+send -- "$password\r"
+sleep 2
+send -- "\r"
+#execute input cmd on nas
+puts ""
+puts "******* Execute command $cmd on nas host $host *******"
+#send "$cmd\r"
+sleep 2
+send -- "exit\r"
+sleep 2
+expect "login"
+#send -- "^[("
+send -- [binary format ca 27 ( ]
+expect "hpiLO"
+send -- "exit\r"
+expect eof

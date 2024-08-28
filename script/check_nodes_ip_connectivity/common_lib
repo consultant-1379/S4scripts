@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Functions
+
+#######################################
+# Print a message with date/time and severity.
+# Globals:
+#   None
+# Arguments:
+#   Severity (i:INFO,w:WARNING,e:ERROR,d:DEBUG),message
+# Outputs:
+#   None
+#######################################
+print_message(){
+  local severity=$1
+  local message=$2
+  local timestamp=$(date "+%F %T.%3N")
+  case $severity in
+    i)
+      message_severity="INFO"
+      ;;
+    w)
+      message_severity="WARNING"
+      ;;
+    e)
+      message_severity="ERROR"
+      ;;
+    d)
+      message_severity="DEBUG"
+      ;;
+    *)
+      message_severity="UNKNOWN"
+      ;;
+  esac
+  echo "$timestamp $message_severity  $message"
+}
+
+#######################################
+# Check if an ip address is ipv4 or ipv6.
+# Globals:
+#   None
+# Arguments:
+#   Ip address
+# Outputs:
+#   v4: ipv4 address v6: ipv6 address
+#######################################
+check_ipv4_ipv6() {
+  local ip=$1
+  if [[ $ip =~ .*:.* ]];then
+    ip_type="v6"
+  else
+    ip_type="v4"
+  fi
+  echo $ip_type
+}
+

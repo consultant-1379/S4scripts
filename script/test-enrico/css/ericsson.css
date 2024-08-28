@@ -1,0 +1,265 @@
+@font-face{font-family:EricssonHilda;
+    src:local(EricssonHilda-Light),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Light.woff2) format("woff2"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Light.woff) format("woff"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Light.eot) format("truetype");
+    font-weight:300;font-style:normal;font-stretch:normal}
+    @font-face{font-family:EricssonHilda;
+    src:local(EricssonHilda-Regular),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Regular.woff2) format("woff2"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Regular.woff) format("woff"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Regular.eot) format("truetype");
+    font-weight:normal;font-style:normal;font-stretch:normal}
+    @font-face{font-family:EricssonHilda;src:local(EricssonHilda-Medium),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Medium.woff2) format("woff2"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Medium.woff) format("woff"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Medium.eot) format("truetype");font-weight:500;font-style:normal;font-stretch:normal}@font-face{font-family:EricssonHilda;src:local(EricssonHilda-Bold),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Bold.woff2) format("woff2"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Bold.woff) format("woff"),url(https://brandhouse.ericsson.net/theme/css/hilda-font/EricssonHilda-Bold.eot) format("truetype");
+    font-weight:700;font-style:normal;font-stretch:normal}
+      
+      .eds-btn {
+        display: inline-block;
+        padding: .5rem 1rem;
+        min-width: 4.5rem;
+        max-width: 100%;
+        border-radius: .1875rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-transition: ease-in .2s;
+        transition: ease-in .2s;
+        -webkit-transition-property: background-color, color;
+        transition-property: background-color, color;
+        font-family: EricssonHilda, Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale
+    }
+    
+    .eds-btn:focus {
+        outline: none
+    }
+    
+    .eds-btn:hover {
+        cursor: pointer
+    }
+    
+    .eds-btn.primary {
+        display: inline-block;
+        padding: .5rem 1rem;
+        min-width: 4.5rem;
+        max-width: 100%;
+        border-radius: .1875rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-transition: ease-in .2s;
+        transition: ease-in .2s;
+        -webkit-transition-property: background-color, color;
+        transition-property: background-color, color;
+        font-family: EricssonHilda, Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #0082f0;
+        color: #fafafa;
+        border: none
+    }
+    
+    .eds-btn.primary:focus {
+        outline: none
+    }
+    
+    .eds-btn.primary:hover {
+        cursor: pointer
+    }
+    
+    .eds-btn.primary:focus {
+        color: #fafafa;
+        border: none
+    }
+    
+    .eds-btn.primary:hover {
+        background-color: #4d97ed;
+        color: #fafafa
+    }
+    
+    .eds-btn.primary:active {
+        background-color: #105ab0;
+        color: #fafafa
+    }
+    
+    .eds-btn.primary:disabled,
+    .eds-btn.primary.disabled {
+        cursor: default;
+        background-color: rgba(0, 130, 240, 0.4);
+        color: rgba(250, 250, 250, 0.6)
+    }
+    
+    .touch .eds-btn.primary:hover {
+        background-color: #0082f0;
+        color: #fafafa
+    }
+    
+    .touch .eds-btn.primary:active {
+        background-color: #105ab0;
+        color: #fafafa
+    }
+    
+    .eds-btn.secondary {
+        display: inline-block;
+        padding: .5rem 1rem;
+        min-width: 4.5rem;
+        max-width: 100%;
+        border-radius: .1875rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-transition: ease-in .2s;
+        transition: ease-in .2s;
+        -webkit-transition-property: background-color, color;
+        transition-property: background-color, color;
+        font-family: EricssonHilda, Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: rgba(0, 0, 0, 0);
+        color: #242424;
+        border: 1px solid #242424
+    }
+    
+    .eds-btn.secondary:focus {
+        outline: none
+    }
+    
+    .eds-btn.secondary:hover {
+        cursor: pointer
+    }
+    
+    .eds-btn.secondary:focus {
+        color: #242424
+    }
+    
+    .eds-btn.secondary:hover {
+        background-color: #4a4a4a;
+        color: #fafafa
+    }
+    
+    .eds-btn.secondary:active {
+        background-color: #3a3a3a;
+        color: #fafafa
+    }
+    
+    .eds-btn.secondary:disabled,
+    .eds-btn.secondary.disabled {
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0);
+        color: rgba(36, 36, 36, 0.4)
+    }
+    
+    .touch .eds-btn.secondary:hover {
+        background-color: rgba(0, 0, 0, 0);
+        color: #242424
+    }
+    
+    .touch .eds-btn.secondary:active {
+        background-color: #3a3a3a;
+        color: #fafafa
+    }
+    
+    .eds-btn.secondary:hover {
+        border-color: #4a4a4a
+    }
+    
+    .eds-btn.secondary:active {
+        border-color: #3a3a3a
+    }
+    
+    .eds-btn.secondary:disabled,
+    .eds-btn.secondary.disabled {
+        border-color: rgba(36, 36, 36, 0.4)
+    }
+    
+    .eds-btn.secondary-inverse {
+        display: inline-block;
+        padding: .5rem 1rem;
+        min-width: 4.5rem;
+        max-width: 100%;
+        border-radius: .1875rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-transition: ease-in .2s;
+        transition: ease-in .2s;
+        -webkit-transition-property: background-color, color;
+        transition-property: background-color, color;
+        font-family: EricssonHilda, Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: rgba(0, 0, 0, 0);
+        color: #fafafa;
+        border: 1px solid #fafafa
+    }
+    
+    .eds-btn.secondary-inverse:focus {
+        outline: none
+    }
+    
+    .eds-btn.secondary-inverse:hover {
+        cursor: pointer
+    }
+    
+    .eds-btn.secondary-inverse:focus {
+        color: #fafafa
+    }
+    
+    .eds-btn.secondary-inverse:hover {
+        background-color: #fafafa;
+        color: #242424
+    }
+    
+    .eds-btn.secondary-inverse:active {
+        background-color: #e0e0e0;
+        color: #242424
+    }
+    
+    .eds-btn.secondary-inverse:disabled,
+    .eds-btn.secondary-inverse.disabled {
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0);
+        color: rgba(250, 250, 250, 0.4)
+    }
+    
+    .touch .eds-btn.secondary-inverse:hover {
+        background-color: rgba(0, 0, 0, 0);
+        color: #fafafa
+    }
+    
+    .touch .eds-btn.secondary-inverse:active {
+        background-color: #e0e0e0;
+        color: #242424
+    }
+    
+    .eds-btn.secondary-inverse:hover {
+        border-color: #fafafa
+    }
+    
+    .eds-btn.secondary-inverse:active {
+        border-color: #e0e0e0
+    }
+    
+    .eds-btn.secondary-inverse:disabled,
+    .eds-btn.secondary-inverse.disabled {
+        border-color: rgba(250, 250, 250, 0.4)
+    }

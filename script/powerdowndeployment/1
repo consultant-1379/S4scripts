@@ -1,0 +1,131 @@
+#!/bin/bash
+# Blade Power on Script
+# ********************************************************************
+# Ericsson Radio Systems AB                                     SCRIPT
+# ********************************************************************
+#
+#
+# (c) Ericsson Radio Systems AB 2021 - All rights reserved.
+#
+# The copyright to the computer program(s) herein is the property
+# of Ericsson Radio Systems AB, Sweden. The programs may be used
+# and/or copied only with the written permission from Ericsson Radio
+# Systems AB or in accordance with the terms and conditions stipulated
+# in the agreement/contract under which the program(s) have been
+# supplied.
+#
+# ********************************************************************
+# Name    : poweron_blades.sh
+# Date    : xx/01/2024
+# Revision: A
+# Purpose : This script performs power on of blades associated to a 
+#           ENM physical deployment
+#
+#
+# Version Information:
+#       Version Who             Date            Comment
+#       0.1     estmann         xx/01/2024      Initial draft
+#
+# Usage   :
+#
+# ********************************************************************
+
+. ./functions_lib.sh
+
+CLUSTER_ID=$1
+
+setVars
+
+## Begin of powerdown blades
+
+echo "INFO: Download SED file from DMT"
+downloadSedFile
+
+blades_pwr_down_prio=$(echo $clusters_pwr_down_prio | sed 's/_cluster//g')
+clusters_pwr_down_prio="asr_cluster ebs_cluster eba_cluster str_cluster evt_cluster scp_cluster svc_cluster db_cluster"
+#echo "INFO: Get ip address of LMS"
+lms_ip=$(getDataFromSed LMS_IP)
+if [ -z "$lms_ip" ];then
+  echo "ERROR: LMS ip not found in sed file !"
+  exit 1
+else
+  echo "INFO: LMS ip: $lms_ip"
+fi
+clusters_present=""
+
+clusters=$(sshpass -p 12shroot ssh -tt -q root@$lms_ip "/opt/ericsson/enminst/bin/vcs.bsh --systems" | grep cluster | awk '{print \$3}' | sort | uniq)
+if [ -z "$clusters" ];then
+  echo "ERROR: ENM clusters not detected in LMS !"
+  exit 1
+else
+  echo "INFO: Following ENM clusters have been found:" $clusters
+fi
+for cluster_pwr_down_prio in $clusters_pwr_down_prio;do
+  if [[ $clusters == *"$cluster_pwr_down_prio"* ]];then
+    clusters_present="$clusters_present $cluster_pwr_down_prio"
+  fi
+done
+
+for cluster_present in $clusters_present;do
+  echo "INFO: Getting ENM services of cluster $cluster_present"
+  enm_sgs=$(sshpass -p 12shroot ssh -tt -q root@$lms_ip "/opt/ericsson/enminst/bin/vcs.bsh --groups -c $cluster_present | grep $cluster_present | awk '{print $2}' | sort | uniq")
+
+  enm_sgs_no_lvs_router=$(echo "$enm_sgs" | grep -v lvs_router)
+  echo "INFO: Stopping ENM services of cluster $cluster_present"
+  for enm_sg in $enm_sgs_no_lvs_router;do
+    echo "sshpass -p 12shroot ssh -tt -q root@$lms_ip \"/opt/ericsson/enminst/bin/vcs.bsh --offline -g $enm_sg\""
+
+    sg_status=$(sshpass -p 12shroot ssh -tt -q root@$lms_ip "/opt/ericsson/enminst/bin/vcs.bsh --groups -g $enm_sg | grep $enm_sg \ awk '{print \$6}' | sort | uniq")
+    counter=1
+    while [ $counter -le 3 ];do
+      if [[ "$sg_status" != *"OFFLINE"* ]]  && [[ $counter == '3' ]];then
+        echo "ERROR: Offline of Service Group $enm_sg has failed !"
+        continue
+      fi
+      ((counter++))
+    done  
+  done
+  lvs_router_sg=$(echo "$enm_sgs" | grep lvs_router)
+  echo "sshpass -p 12shroot ssh -tt -q root@$lms_ip \"/opt/ericsson/enminst/bin/vcs.bsh --offline -g $lvs_router_sg\""
+  sg_status=$(sshpass -p 12shroot ssh -tt -q root@$lms_ip "/opt/ericsson/enminst/bin/vcs.bsh --groups -g $lvs_router_sg | grep $lvs_router_sg \ awk '{print \$6}' | sort | uniq")
+  counter=1
+  while [ $counter -le 3 ];do
+    if [[ "$sg_status" != *"OFFLINE"* ]]  && [[ $counter == '3' ]];then
+      echo "ERROR: Offline of Service Group $lvs_router_sg has failed !"
+      continue
+    fi
+  ((counter++))
+  done
+  echo "INFO: Power down nodes of cluster $cluster_present"
+  blade_pwr_down_prio=$(echo $cluster_present | sed 's/_cluster//g')
+  nodes=$(getNodesFromSed ${blade_pwr_down_prio}_node)
+  echo "INFO: Following nodes have been found in SED file: $nodes"
+  for node in $nodes;do
+    #echo "INFO: Getting ILO ip for node $node from SED file"
+    node_ilo_ip=$(getDataFromSed ${node}_ilo_IP)
+    if [ ! -z "$node_ilo_ip" ];then
+      echo "INFO: Power down node $node (ilo ip -> $node_ilo_ip)"
+      echo "INFO: sudo curl -s -L -k --user root:shroot12 -H \"Content-Type: application/json\" -d '{\"ResetType\": \"ForceOff\"}' -X POST https://$node_ilo_ip/redfish/v1/Systems/1/Actions/ComputerSystem.Reset"
+#      sudo curl -s -L -k --user root:shroot12 -H "Content-Type: application/json" -d '{"ResetType": "ForceOff"}' -X POST https://$node_ilo_ip/redfish/v1/Systems/1/Actions/ComputerSystem.Reset
+      sleep 10
+      counter=1
+      while [ $counter -le 3 ];do
+        echo "INFO: Checking if node $node ($node_ilo_ip) is powered off ($counter of 3)"
+        power_state=$(sudo curl -s -L -k --user root:shroot12 -X GET https://$node_ilo_ip/redfish/v1/Systems/1 | egrep -o "PowerState.{1,7},")
+        if [[ "$power_state" == *"Off"* ]];then
+          echo "INFO: Node $node ($node_ilo_ip) has been powered off"
+          break
+        fi
+        if [[ "$power_state" != *"Off"* ]] && [[ $counter == '3' ]];then
+          echo "ERROR: Node $node ($node_ilo_ip) has not been powered off !"
+        fi
+        echo "INFO: Waiting 10 seconds"
+        sleep 10
+        ((counter++))
+      done
+
+    else
+      echo "ERROR: Node $node ILO ip has not found in SED file !"
+    fi
+  done
+done

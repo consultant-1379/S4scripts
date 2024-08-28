@@ -1,0 +1,44 @@
+.ReadMsgBody {
+    width: 100%;
+}
+
+.ExternalClass {
+    width: 100%;
+}
+
+.ExternalClass {
+    line-height: 100%;
+}
+
+body {
+    background-color: #ebebec;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+* {
+    line-height: 100%;
+}
+
+table tr td {
+    mso-line-height-rule: exactly;
+}
+
+img {
+    border: 0 none;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+    display: block;
+}
+
+a img {
+    border: 0 none;
+}
+
+.imageFix {
+    display: block;
+}

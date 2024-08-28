@@ -1,0 +1,43 @@
+#!/bin/bash
+
+netsim_name="ieatnetsimv5116"
+netsim_hosts="01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 108 109 110"
+
+netypes="BSC DSC ERBS HLR-FE HLR-FE-BSP HLR-FE-IS MGW MINI-LINK-6352 MINI-LINK-Indoor MSC-BC-IS MSC-BB-BSP MTAS RadioNode RBS RNC Router6672 SGSN-MME SIU02 TCU02 vHLR-FE"
+
+fetched_files_list=""
+tot_number_nodes_enm=0
+
+for i in $netsim_hosts;do 
+	fetched_files_list="$fetched_files_list $netsim_name-$i.athtem.eei.ericsson.se-nodes"
+    echo "$fetched_files_list" > text.txt
+done
+
+#number_dsc_netsim=$(sshpass -p 12shroot ssh nagios@$1 "cd /opt/ericsson/enmutils/etc/nodes;cat $fetched_files_list | awk '{print $1}' | grep -v node_name | grep DSC | wc -l")
+for n in $netypes;do
+	number_nodes_enm=$(sshpass -p 12shroot ssh nagios@$1 "sudo /opt/ericsson/enmutils/bin/cli_app 'cmedit get * NetworkElement.neType==$n -t' | grep -i $n | wc -l")
+	tot_number_nodes_enm=$((tot_number_nodes_enm + number_nodes_enm))
+	eval "number_nodes_${n}"=$number_nodes_enm
+done
+#number_nodes_enm=$(sshpass -p 12shroot ssh nagios@$1 "sudo /opt/ericsson/enmutils/bin/cli_app 'cmedit get * NetworkElement' | grep NetworkElement | wc -l")
+
+number_nodes_netsim=$(sshpass -p 12shroot ssh nagios@$1 "cd /opt/ericsson/enmutils/etc/nodes;cat $fetched_files_list | awk '{print $1}' | grep -v node_name | wc -l")
+
+warning_value_float=`echo "$tot_number_nodes_enm * 0.95" | bc -l`
+warning_value=${warning_value_float%.*}
+
+critical_value_float=`echo "$tot_number_nodes_enm * 0.8" | bc -l`
+critical_value=${critical_value_float%.*}
+
+if [[ ("$tot_number_nodes_enm" -lt "$warning_value") && ("$tot_number_nodes_enm" -gt "$critical_value") ]];then
+	echo "WARNING- NUMBER OF NODES CONFIGURED IN ENM ($number_nodes_enm) IS BETWEEN 80% AND 95% OF NETSIM NODES ($number_nodes_netsim)"
+	exit 1	
+fi
+
+if [[ "$tot_number_nodes_enm" -lt "$critical_value" ]];then
+        echo "CRITICAL- NUMBER OF NODES CONFIGURED IN ENM ($tot_number_nodes_enm) IS LOWER THAN 80% OF NETSIM NODES ($number_nodes_netsim)"
+        exit 2
+fi
+
+echo "OK- NUMBER OF NODES CONFIGURED IN ENM ($tot_number_nodes_enm) IS HIGHER THAN 95% OF NETSIM NODES ($number_nodes_netsim)"
+exit 0

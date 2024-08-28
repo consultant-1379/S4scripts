@@ -1,0 +1,1 @@
+./rpmloader_setup.sh -r https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/repositories/releases/com/ericsson/oss/services/cm/ERICcmwrite_CXP9030317/1.87.5/ERICcmwrite_CXP9030317-1.87.5.rpm -s vaultserv -j CIP-123456 -m ieatlms3901

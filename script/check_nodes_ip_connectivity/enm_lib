@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Functions
+
+#######################################
+# Get enm vm from /etc/hosts file.
+# Globals:
+#   None
+# Arguments:
+#   ENM sg to find vm hostname (e.g. mssnmpcm)
+# Outputs:
+#   ENM vm (e.g. svc-10-mssnmpcm)
+#######################################
+get_enm_vm_from_host_file(){
+  local enm_sg=$1
+  local enm_vm
+  enm_vm=$(cat /etc/hosts | grep $enm_sg | awk '{print $2}' | head -n 1)
+  echo $enm_vm
+}
+
+#######################################
+# Get enm cm mediation sg from netype.
+# Globals:
+#   None
+# Arguments:
+#   Netype from Netsim nodes files
+# Outputs:
+#   Cm mediation vm
+#######################################
+get_cmmediation_vm_from_netype(){
+  local netype=$1
+  case $netype in
+    MINI-LINK-6352|MINI-LINK-669x)
+      mediation_vm="mssnmpcm"
+      ;;
+    Router6274|Router6675)
+      mediation_vm="mscmip"
+      ;;
+    RadioNode|SGSN)
+      mediation_vm="mscmce"
+      ;;
+    d)
+      message_severity="DEBUG"
+      ;;
+    *)
+      mediation_vm="UNKNOWN"
+      ;;
+  esac
+  echo $mediation_vm
+}
+

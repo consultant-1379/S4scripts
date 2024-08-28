@@ -1,0 +1,3438 @@
+###############################################################################
+# LOCALHOST.CFG - SAMPLE OBJECT CONFIG FILE FOR MONITORING THIS MACHINE
+#
+#
+# NOTE: This config file is intended to serve as an *extremely* simple 
+#       example of how you can create configuration entries to monitor
+#       the local (Linux) machine.
+#
+###############################################################################
+
+
+
+
+###############################################################################
+###############################################################################
+#
+# HOST DEFINITION
+#
+###############################################################################
+###############################################################################
+
+# Define a host for the local machine
+
+
+define host{
+	use			linux-server
+	host_name		ieatlms3901
+	alias			ieatlms3901
+	address			141.137.208.23
+#	_msaddress		141.137.208.23
+       contact_groups  		623admins
+	}
+
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb2445
+        alias                   svc-1
+        address                 141.137.208.5
+       contact_groups  		623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3804
+        alias                   svc-2
+        address                 141.137.208.11
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb2446
+        alias                   svc-3
+        address                 141.137.208.6
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3805
+        alias                   svc-4
+        address                 141.137.208.12
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3776
+        alias                   svc-5
+        address                 141.137.208.7
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3806
+        alias                   svc-6
+        address                 141.137.208.13
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3777
+        alias                   svc-7
+        address                 141.137.208.8
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3807
+        alias                   svc-8
+        address                 141.137.208.14
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3778
+        alias                   svc-9
+        address                 141.137.208.9
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3911
+        alias                   svc-10
+        address                 141.137.208.15
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3914
+        alias                   scp-1
+        address                 141.137.208.18
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb4416
+        alias                   scp-2
+        address                 141.137.208.21
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3839
+        alias                   scp-3
+        address                 141.137.208.19
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb6446
+        alias                   scp-4
+        address                 141.137.208.22
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3779
+        alias                   db-1
+        address                 141.137.208.10
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3912
+        alias                   db-2
+        address                 141.137.208.16
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3995
+        alias                   db-3
+        address                 141.137.208.20
+       contact_groups  623admins
+        }
+
+define host{
+        use                     linux-server
+        host_name               ieatrcxb3913
+        alias                   db-4
+        address                 141.137.208.17
+       contact_groups  623admins
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-01
+        alias                   ieatnetsimv5116-01
+        address                 10.151.192.175
+	check_command		test!141.137.208.23!10.151.192.175
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-02
+        alias                   ieatnetsimv5116-02
+        address                 10.151.192.176
+	check_command           test!141.137.208.23!10.151.192.176
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-03
+        alias                   ieatnetsimv5116-03
+        address                 10.151.192.177
+        check_command           test!141.137.208.23!10.151.192.177
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-04
+        alias                   ieatnetsimv5116-04
+        address                 10.151.192.178
+        check_command           test!141.137.208.23!10.151.192.178
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-05
+        alias                   ieatnetsimv5116-05
+        address                 10.151.192.179
+        check_command           test!141.137.208.23!10.151.192.179
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-06
+        alias                   ieatnetsimv5116-06
+        address                 10.151.192.180
+        check_command           test!141.137.208.23!10.151.192.180
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-07
+        alias                   ieatnetsimv5116-07
+        address                 10.151.192.181
+        check_command           test!141.137.208.23!10.151.192.181
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-08
+        alias                   ieatnetsimv5116-08
+        address                 10.151.192.182
+        check_command           test!141.137.208.23!10.151.192.182
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-09
+        alias                   ieatnetsimv5116-09
+        address                 10.151.192.183
+        check_command           test!141.137.208.23!10.151.192.183
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-10
+        alias                   ieatnetsimv5116-10
+        address                 10.151.192.184
+        check_command           test!141.137.208.23!10.151.192.184
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-11
+        alias                   ieatnetsimv5116-11
+        address                 10.151.192.185
+        check_command           test!141.137.208.23!10.151.192.185
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-12
+        alias                   ieatnetsimv5116-12
+        address                 10.151.192.186
+        check_command           test!141.137.208.23!10.151.192.186
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-13
+        alias                   ieatnetsimv5116-13
+        address                 10.151.192.187
+        check_command           test!141.137.208.23!10.151.192.187
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-14
+        alias                   ieatnetsimv5116-14
+        address                 10.151.192.188
+        check_command           test!141.137.208.23!10.151.192.188
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-15
+        alias                   ieatnetsimv5116-15
+        address                 10.151.192.189
+        check_command           test!141.137.208.23!10.151.192.189
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-16
+        alias                   ieatnetsimv5116-16
+        address                 10.151.192.190
+        check_command           test!141.137.208.23!10.151.192.190
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-17
+        alias                   ieatnetsimv5116-17
+        address                 10.151.192.191
+        check_command           test!141.137.208.23!10.151.192.191
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-18
+        alias                   ieatnetsimv5116-18
+        address                 10.151.192.192
+        check_command           test!141.137.208.23!10.151.192.192
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-19
+        alias                   ieatnetsimv5116-19
+        address                 10.151.192.193
+        check_command           test!141.137.208.23!10.151.192.193
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-20
+        alias                   ieatnetsimv5116-20
+        address                 10.151.192.194
+        check_command           test!141.137.208.23!10.151.192.194
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-21
+        alias                   ieatnetsimv5116-21
+        address                 10.151.192.195
+        check_command           test!141.137.208.23!10.151.192.195
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-22
+        alias                   ieatnetsimv5116-22
+        address                 10.151.192.196
+        check_command           test!141.137.208.23!10.151.192.196
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-23
+        alias                   ieatnetsimv5116-23
+        address                 10.151.192.197
+        check_command           test!141.137.208.23!10.151.192.197
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-24
+        alias                   ieatnetsimv5116-24
+        address                 10.151.192.198
+        check_command           test!141.137.208.23!10.151.192.198
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-25
+        alias                   ieatnetsimv5116-25
+        address                 10.151.192.199
+        check_command           test!141.137.208.23!10.151.192.199
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-26
+        alias                   ieatnetsimv5116-26
+        address                 10.151.192.200
+        check_command           test!141.137.208.23!10.151.192.200
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-27
+        alias                   ieatnetsimv5116-27
+        address                 10.151.192.201
+        check_command           test!141.137.208.23!10.151.192.201
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-28
+        alias                   ieatnetsimv5116-28
+        address                 10.151.192.202
+        check_command           test!141.137.208.23!10.151.192.202
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-29
+        alias                   ieatnetsimv5116-29
+        address                 10.151.192.203
+        check_command           test!141.137.208.23!10.151.192.203
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-30
+        alias                   ieatnetsimv5116-30
+        address                 10.151.192.204
+        check_command           test!141.137.208.23!10.151.192.204
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-31
+        alias                   ieatnetsimv5116-31
+        address                 10.151.192.205
+        check_command           test!141.137.208.23!10.151.192.205
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-32
+        alias                   ieatnetsimv5116-32
+        address                 10.151.192.206
+        check_command           test!141.137.208.23!10.151.192.206
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-33
+        alias                   ieatnetsimv5116-33
+        address                 10.151.192.207
+        check_command           test!141.137.208.23!10.151.192.207
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-34
+        alias                   ieatnetsimv5116-34
+        address                 10.151.192.208
+        check_command           test!141.137.208.23!10.151.192.208
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-35
+        alias                   ieatnetsimv5116-35
+        address                 10.151.192.209
+        check_command           test!141.137.208.23!10.151.192.209
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-36
+        alias                   ieatnetsimv5116-36
+        address                 10.151.192.210
+        check_command           test!141.137.208.23!10.151.192.210
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-37
+        alias                   ieatnetsimv5116-37
+        address                 10.151.192.211
+        check_command           test!141.137.208.23!10.151.192.211
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-38
+        alias                   ieatnetsimv5116-38
+        address                 10.151.192.212
+        check_command           test!141.137.208.23!10.151.192.212
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-39
+        alias                   ieatnetsimv5116-39
+        address                 10.151.192.213
+        check_command           test!141.137.208.23!10.151.192.213
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-40
+        alias                   ieatnetsimv5116-40
+        address                 10.151.192.214
+        check_command           test!141.137.208.23!10.151.192.214
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-41
+        alias                   ieatnetsimv5116-41
+        address                 10.151.192.215
+        check_command           test!141.137.208.23!10.151.192.215
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-42
+        alias                   ieatnetsimv5116-42
+        address                 10.151.192.216
+        check_command           test!141.137.208.23!10.151.192.216
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-43
+        alias                   ieatnetsimv5116-43
+        address                 10.151.192.217
+        check_command           test!141.137.208.23!10.151.192.217
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-44
+        alias                   ieatnetsimv5116-44
+        address                 10.151.192.218
+        check_command           test!141.137.208.23!10.151.192.218
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-45
+        alias                   ieatnetsimv5116-45
+        address                 10.151.192.219
+        check_command           test!141.137.208.23!10.151.192.219
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-46
+        alias                   ieatnetsimv5116-46
+        address                 10.151.192.220
+        check_command           test!141.137.208.23!10.151.192.220
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-47
+        alias                   ieatnetsimv5116-47
+        address                 10.151.192.221
+        check_command           test!141.137.208.23!10.151.192.221
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-48
+        alias                   ieatnetsimv5116-48
+        address                 10.151.192.222
+        check_command           test!141.137.208.23!10.151.192.222
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-49
+        alias                   ieatnetsimv5116-49
+        address                 10.151.192.223
+        check_command           test!141.137.208.23!10.151.192.223
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-50
+        alias                   ieatnetsimv5116-50
+        address                 10.151.192.224
+        check_command           test!141.137.208.23!10.151.192.224
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-51
+        alias                   ieatnetsimv5116-51
+        address                 10.151.192.225
+        check_command           test!141.137.208.23!10.151.192.225
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-52
+        alias                   ieatnetsimv5116-52
+        address                 10.151.192.226
+        check_command           test!141.137.208.23!10.151.192.226
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-53
+        alias                   ieatnetsimv5116-53
+        address                 10.151.192.227
+        check_command           test!141.137.208.23!10.151.192.227
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-54
+        alias                   ieatnetsimv5116-54
+        address                 10.151.192.228
+        check_command           test!141.137.208.23!10.151.192.228
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-55
+        alias                   ieatnetsimv5116-55
+        address                 10.151.192.229
+        check_command           test!141.137.208.23!10.151.192.229
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-56
+        alias                   ieatnetsimv5116-56
+        address                 10.151.192.230
+        check_command           test!141.137.208.23!10.151.192.230
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-57
+        alias                   ieatnetsimv5116-57
+        address                 10.151.192.231
+        check_command           test!141.137.208.23!10.151.192.231
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-58
+        alias                   ieatnetsimv5116-58
+        address                 10.151.192.232
+        check_command           test!141.137.208.23!10.151.192.232
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-59
+        alias                   ieatnetsimv5116-59
+        address                 10.151.192.233
+        check_command           test!141.137.208.23!10.151.192.233
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-60
+        alias                   ieatnetsimv5116-60
+        address                 10.151.192.234
+        check_command           test!141.137.208.23!10.151.192.234
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-61
+        alias                   ieatnetsimv5116-61
+        address                 10.151.192.235
+        check_command           test!141.137.208.23!10.151.192.235
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-62
+        alias                   ieatnetsimv5116-62
+        address                 10.151.192.236
+        check_command           test!141.137.208.23!10.151.192.236
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-63
+        alias                   ieatnetsimv5116-63
+        address                 10.151.192.237
+        check_command           test!141.137.208.23!10.151.192.237
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-64
+        alias                   ieatnetsimv5116-64
+        address                 10.151.192.238
+        check_command           test!141.137.208.23!10.151.192.238
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-65
+        alias                   ieatnetsimv5116-65
+        address                 10.151.192.239
+        check_command           test!141.137.208.23!10.151.192.239
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-66
+        alias                   ieatnetsimv5116-66
+        address                 10.151.192.240
+        check_command           test!141.137.208.23!10.151.192.240
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-67
+        alias                   ieatnetsimv5116-67
+        address                 10.151.192.241
+        check_command           test!141.137.208.23!10.151.192.241
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-68
+        alias                   ieatnetsimv5116-68
+        address                 10.151.192.242
+        check_command           test!141.137.208.23!10.151.192.242
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-69
+        alias                   ieatnetsimv5116-69
+        address                 10.151.192.243
+        check_command           test!141.137.208.23!10.151.192.243
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-70
+        alias                   ieatnetsimv5116-70
+        address                 10.151.192.244
+        check_command           test!141.137.208.23!10.151.192.244
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-71
+        alias                   ieatnetsimv5116-71
+        address                 10.151.192.245
+        check_command           test!141.137.208.23!10.151.192.245
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-72
+        alias                   ieatnetsimv5116-72
+        address                 10.151.192.246
+        check_command           test!141.137.208.23!10.151.192.246
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-73
+        alias                   ieatnetsimv5116-73
+        address                 10.151.192.247
+        check_command           test!141.137.208.23!10.151.192.247
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-74
+        alias                   ieatnetsimv5116-74
+        address                 10.151.192.248
+        check_command           test!141.137.208.23!10.151.192.248
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-75
+        alias                   ieatnetsimv5116-75
+        address                 10.151.192.249
+        check_command           test!141.137.208.23!10.151.192.249
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-76
+        alias                   ieatnetsimv5116-76
+        address                 10.151.192.250
+        check_command           test!141.137.208.23!10.151.192.250
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-77
+        alias                   ieatnetsimv5116-77
+        address                 10.151.192.251
+        check_command           test!141.137.208.23!10.151.192.251
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-78
+        alias                   ieatnetsimv5116-78
+        address                 10.151.192.252
+        check_command           test!141.137.208.23!10.151.192.252
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-79
+        alias                   ieatnetsimv5116-79
+        address                 10.151.192.253
+        check_command           test!141.137.208.23!10.151.192.253
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-80
+        alias                   ieatnetsimv5116-80
+        address                 10.151.192.254
+        check_command           test!141.137.208.23!10.151.192.254
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-81
+        alias                   ieatnetsimv5116-81
+        address                 10.151.192.255
+        check_command           test!141.137.208.23!10.151.192.255
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-82
+        alias                   ieatnetsimv5116-82
+        address                 10.151.193.0
+        check_command           test!141.137.208.23!10.151.193.0
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-83
+        alias                   ieatnetsimv5116-83
+        address                 10.151.193.1
+        check_command           test!141.137.208.23!10.151.193.1
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-84
+        alias                   ieatnetsimv5116-84
+        address                 10.151.193.2
+        check_command           test!141.137.208.23!10.151.193.2
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-85
+        alias                   ieatnetsimv5116-85
+        address                 10.151.193.3
+        check_command           test!141.137.208.23!10.151.193.3
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-86
+        alias                   ieatnetsimv5116-86
+        address                 10.151.193.4
+        check_command           test!141.137.208.23!10.151.193.4
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-87
+        alias                   ieatnetsimv5116-87
+        address                 10.151.193.5
+        check_command           test!141.137.208.23!10.151.193.5
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-88
+        alias                   ieatnetsimv5116-88
+        address                 10.151.193.6
+        check_command           test!141.137.208.23!10.151.193.6
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-89
+        alias                   ieatnetsimv5116-89
+        address                 10.151.193.7
+        check_command           test!141.137.208.23!10.151.193.7
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-90
+        alias                   ieatnetsimv5116-90
+        address                 10.151.193.8
+        check_command           test!141.137.208.23!10.151.193.8
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-91
+        alias                   ieatnetsimv5116-91
+        address                 10.151.193.9
+        check_command           test!141.137.208.23!10.151.193.9
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-92
+        alias                   ieatnetsimv5116-92
+        address                 10.151.193.10
+        check_command           test!141.137.208.23!10.151.193.10
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-93
+        alias                   ieatnetsimv5116-93
+        address                 10.151.193.11
+        check_command           test!141.137.208.23!10.151.193.11
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-94
+        alias                   ieatnetsimv5116-94
+        address                 10.151.193.12
+        check_command           test!141.137.208.23!10.151.193.12
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-95
+        alias                   ieatnetsimv5116-95
+        address                 10.151.193.63
+        check_command           test!141.137.208.23!10.151.193.63
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-108
+        alias                   ieatnetsimv5116-108
+        address                 10.151.193.76
+        check_command           test!141.137.208.23!10.151.193.76
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-109
+        alias                   ieatnetsimv5116-109
+        address                 10.151.193.77
+        check_command           test!141.137.208.23!10.151.193.77
+        }
+
+define host{
+        use                     netsim-server
+        host_name               ieatnetsimv5116-110
+        alias                   ieatnetsimv5116-110
+        address                 10.151.193.78
+        check_command           test!141.137.208.23!10.151.193.78
+        }
+
+
+define host{
+        use                     linux-server
+        host_name               ieatwlvm5116
+        alias                   ieatwlvm5116
+        address                 10.151.193.14
+        check_command           test!141.137.208.23!10.151.193.14
+        }
+
+
+
+###############################################################################
+###############################################################################
+##
+## HOST GROUP DEFINITION
+##
+################################################################################
+################################################################################
+#
+## Define an optional hostgroup for Linux machines
+#
+define hostgroup{
+        hostgroup_name  Deployment_623 ; The name of the hostgroup
+        alias           Deployment_623 ; Long name of the group
+        members         ieatlms3901,ieatrcxb2445,ieatrcxb3804,ieatrcxb2446,ieatrcxb3805,ieatrcxb3776,ieatrcxb3806,ieatrcxb3777,ieatrcxb3807,ieatrcxb3778,ieatrcxb3911,ieatrcxb3914,ieatrcxb4416,ieatrcxb3839,ieatrcxb6446,ieatrcxb3779,ieatrcxb3912,ieatrcxb3995,ieatrcxb3913,ieatnetsimv5116-01,ieatnetsimv5116-02,ieatnetsimv5116-03,ieatnetsimv5116-04,ieatnetsimv5116-05,ieatnetsimv5116-06,ieatnetsimv5116-07,ieatnetsimv5116-08,ieatnetsimv5116-09,ieatnetsimv5116-10,ieatnetsimv5116-11,ieatnetsimv5116-12,ieatnetsimv5116-13,ieatnetsimv5116-14,ieatnetsimv5116-15,ieatnetsimv5116-16,ieatnetsimv5116-17,ieatnetsimv5116-18,ieatnetsimv5116-19,ieatnetsimv5116-20,ieatnetsimv5116-21,ieatnetsimv5116-22,ieatnetsimv5116-23,ieatnetsimv5116-24,ieatnetsimv5116-25,ieatnetsimv5116-26,ieatnetsimv5116-27,ieatnetsimv5116-28,ieatnetsimv5116-29,ieatnetsimv5116-30,ieatnetsimv5116-31,ieatnetsimv5116-32,ieatnetsimv5116-33,ieatnetsimv5116-34,ieatnetsimv5116-35,ieatnetsimv5116-36,ieatnetsimv5116-37,ieatnetsimv5116-38,ieatnetsimv5116-39,ieatnetsimv5116-40,ieatnetsimv5116-41,ieatnetsimv5116-42,ieatnetsimv5116-43,ieatnetsimv5116-44,ieatnetsimv5116-45,ieatnetsimv5116-46,ieatnetsimv5116-47,ieatnetsimv5116-48,ieatnetsimv5116-49,ieatnetsimv5116-50,ieatnetsimv5116-51,ieatnetsimv5116-52,ieatnetsimv5116-53,ieatnetsimv5116-54,ieatnetsimv5116-55,ieatnetsimv5116-56,ieatnetsimv5116-57,ieatnetsimv5116-58,ieatnetsimv5116-59,ieatnetsimv5116-60,ieatnetsimv5116-61,ieatnetsimv5116-62,ieatnetsimv5116-63,ieatnetsimv5116-64,ieatnetsimv5116-65,ieatnetsimv5116-66,ieatnetsimv5116-67,ieatnetsimv5116-68,ieatnetsimv5116-69,ieatnetsimv5116-70,ieatnetsimv5116-71,ieatnetsimv5116-72,ieatnetsimv5116-73,ieatnetsimv5116-74,ieatnetsimv5116-75,ieatnetsimv5116-76,ieatnetsimv5116-77,ieatnetsimv5116-78,ieatnetsimv5116-79,ieatnetsimv5116-80,ieatnetsimv5116-81,ieatnetsimv5116-82,ieatnetsimv5116-83,ieatnetsimv5116-84,ieatnetsimv5116-85,ieatnetsimv5116-86,ieatnetsimv5116-87,ieatnetsimv5116-88,ieatnetsimv5116-89,ieatnetsimv5116-90,ieatnetsimv5116-91,ieatnetsimv5116-92,ieatnetsimv5116-93,ieatnetsimv5116-94,ieatnetsimv5116-95,ieatnetsimv5116-108,ieatnetsimv5116-109,ieatnetsimv5116-110,ieatwlvm5116     ; Comma separated list of hosts that belong to this group
+}
+#
+#
+#
+#
+################################################################################
+################################################################################
+##
+## SERVICE DEFINITIONS
+##
+################################################################################
+################################################################################
+#
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check pm collection statistical
+        check_command           check_pm_collection_statistical!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check fm hb failures cpp
+        check_command           check_fm_hb_failures!141.137.208.23 "RBS ERBS MTAS MGW" CPP
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check fm hb failures snmp
+        check_command           check_fm_hb_failures!141.137.208.23 "SGSN-MME RadioNode RNC DSC RNC TCU02 SIU02 MINI-LINK-6352 MINI-LINK-Indoor" SNMP
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check snapshots
+        check_command           check_snapshots!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check synchronized snmp
+        check_command           check_synchronized!141.137.208.23 "TCU02 SIU02 MINI-LINK-6352 MINI-LINK-Indoor" SNMP
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check synchronized cpp
+        check_command           check_synchronized!141.137.208.23 "RBS ERBS MTAS MGW" CPP
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check synchronized comecim
+        check_command           check_synchronized!141.137.208.23 "SGSN-MME RadioNode RNC DSC RNC" COMECIM
+        }
+
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check hw resources hc
+        check_command           check_enm_hc!141.137.208.23 hw_resources_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check mdt hc
+        check_command           check_enm_hc!141.137.208.23 mdt_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check nas hc
+        check_command           check_enm_hc!141.137.208.23 nas_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check node fs hc
+        check_command           check_enm_hc!141.137.208.23 node_fs_healthcheck
+        }
+
+
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check storagepool hc
+        check_command           check_enm_hc!141.137.208.23 storagepool_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check system service hc
+        check_command           check_enm_hc!141.137.208.23 system_service_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check vcs cluster hc
+        check_command           check_enm_hc!141.137.208.23 vcs_cluster_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check vcs llt heartbeat hc
+        check_command           check_enm_hc!141.137.208.23 vcs_llt_heartbeat_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check vcs service group hc
+        check_command           check_enm_hc!141.137.208.23 vcs_service_group_healthcheck
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check cm supervision nodes
+        check_command           check_cmsupervision_nodes!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check fm supervision nodes
+        check_command           check_fmsupervision_nodes!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check pm supervision nodes
+        check_command           check_pmsupervision_nodes!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check number nodes
+        check_command           check_number_nodes!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check node fs
+        check_command           check_node_fs!141.137.208.23
+        }
+
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check vcs sg
+        check_command           check_vcs_sg!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatlms3901
+        service_description     check unsync nodes
+        check_command           check_unsync_nodes!141.137.208.23
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-01
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.175
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-02
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.176
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-03
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.177
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-04
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.178
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-05
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.179
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-06
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.180
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-07
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.181
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-08
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.182
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-09
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.183
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-10
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.184
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-11
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.185
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-12
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.186
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-13
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.187
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-14
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.188
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-15
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.189
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-16
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.190
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-17
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.191
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-18
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.192
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-19
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.193
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-20
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.194
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-21
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.195
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-22
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.196
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-23
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.197
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-24
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.198
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-25
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.199
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-26
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.200
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-27
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.201
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-28
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.202
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-29
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.203
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-30
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.204
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-31
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.205
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-32
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.206
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-33
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.207
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-34
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.208
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-35
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.209
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-36
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.210
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-37
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.211
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-38
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.212
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-39
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.213
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-40
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.214
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-41
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.215
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-42
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.216
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-43
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.217
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-44
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.218
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-45
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.219
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-46
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.220
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-47
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.221
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-48
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.222
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-49
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.223
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-50
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.224
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-51
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.225
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-52
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.226
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-53
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.227
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-54
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.228
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-55
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.229
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-56
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.230
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-57
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.231
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-58
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.232
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-59
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.233
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-60
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.234
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-61
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.235
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-62
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.236
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-63
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.237
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-64
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.238
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-65
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.239
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-66
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.240
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-67
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.241
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-68
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.242
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-69
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.243
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-70
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.244
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-71
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.245
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-72
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.246
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-73
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.247
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-74
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.248
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-75
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.249
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-76
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.250
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-77
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.251
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-78
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.252
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-79
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.253
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-80
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.254
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-81
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.192.255
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-82
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.0
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-83
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.1
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-84
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.2
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-85
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.3
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-86
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.4
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-87
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.5
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-88
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.6
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-89
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.7
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-90
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.8
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-91
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.9
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-92
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.10
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-93
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.11
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-94
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.12
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-95
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.63
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-108
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.76
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-109
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.77
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-110
+        service_description     check netsim cpu
+        check_command           check_netsim_cpu!141.137.208.23!10.151.193.78
+        }
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-01
+	service_description	check netsim nodes
+	check_command		check_netsim_nodes!141.137.208.23!10.151.192.175
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.175
+	}
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-02
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.176
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.176
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-03
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.177
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.177
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-04
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.178
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.178
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-05
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.179
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.179
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-06
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.180
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.180
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-07
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.181
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.181
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-08
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.182
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.182
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-09
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.183
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.183
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-10
+        service_description     check netsim nodes
+       check_command           check_netsim_nodes!141.137.208.23!10.151.192.184
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.184
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-11
+       service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.185
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.185
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-12
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.186
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.186
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-13
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.187
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.187
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-14
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.188
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.188
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-15
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.189
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.189
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-16
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.190
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.190
+        }
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-17
+	service_description	check netsim nodes
+	check_command		check_netsim_nodes!141.137.208.23!10.151.192.191
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.191
+	}
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-18
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.192
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.192
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-19
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.193
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.193
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-20
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.194
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.194
+      }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-21
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.195
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.195
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-22
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.196
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.196
+
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-23
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.197
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.197
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-24
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.198
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.198
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-25
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.199
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.199
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-26
+        service_description     check netsim nodes
+       check_command           check_netsim_nodes!141.137.208.23!10.151.192.200
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.200
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-27
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.201
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.201
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-28
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.202
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.202
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-29
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.203
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.203
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-30
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.204
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.204
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-31
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.205
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.205
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-32
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.206
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.206
+        }
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-33
+	service_description	check netsim nodes
+	check_command		check_netsim_nodes!141.137.208.23!10.151.192.207
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.207
+	}
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-34
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.208
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.208
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-35
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.209
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.209
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-36
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.210
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.210
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-37
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.211
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.211
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-38
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.212
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.212
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-39
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.213
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.213
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-40
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.214
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.214
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-41
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.215
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.215
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-42
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.216
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.216
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-43
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.217
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.217
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-44
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.218
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.218
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-45
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.219
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.219
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-46
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.220
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.220
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-47
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.221
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.221
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-48
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.222
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.222
+        }
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-49
+	service_description	check netsim nodes
+	check_command		check_netsim_nodes!141.137.208.23!10.151.192.223
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.223
+	}
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-50
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.224
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.224
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-51
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.225
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.225
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-52
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.226
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.226
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-53
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.227
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.227
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-54
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.228
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.228
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-55
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.229
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.229
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-56
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.230
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.230
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-57
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.231
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.231
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-58
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.232
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.232
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-59
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.233
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.233
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-60
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.234
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.234
+        }
+
+define service{
+       use                     generic-service
+        host_name               ieatnetsimv5116-61
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.235
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.235
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-62
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.236
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.236
+       }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-63
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.237
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.237
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-64
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.238
+	event_handler           start_netsim_nodes!141.137.208.23!10.151.192.238
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-65
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.239
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.239
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-66
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.240
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.240
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-67
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.241
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.241
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-68
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.242
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.242
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-69
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.243
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.243
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-70
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.244
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.244
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-71
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.245
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.245
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-72
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.246
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.246
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-73
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.247
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.247
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-74
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.248
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.248
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-75
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.249
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.249
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-76
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.250
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.250
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-77
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.251
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.251
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-78
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.252
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.252
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-79
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.253
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.253
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-80
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.254
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.254
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-81
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.192.255
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.192.255
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-82
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.0
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.0
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-83
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.1
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.1
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-84
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.2
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.2
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-85
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.3
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.3
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-86
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.4
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.4
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-87
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.5
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.5
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-88
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.6
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.6
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-89
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.7
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.7
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-90
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.8
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.8
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-91
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.9
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.9
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-92
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.10
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.10
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-93
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.11
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.11
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-94
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.12
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.12
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-95
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.63
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.63
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-108
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.76
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.76
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-109
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.77
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.77
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-110
+        service_description     check netsim nodes
+        check_command           check_netsim_nodes!141.137.208.23!10.151.193.78
+        event_handler           start_netsim_nodes!141.137.208.23!10.151.193.78
+        }
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-01
+	service_description	check netsim disk
+	check_command		check_netsim_disk!141.137.208.23!10.151.192.175
+	event_handler		delete_netsim_backupfiles!141.137.208.23!10.151.192.175
+	}
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-02
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.176
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.176
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-03
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.177
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.177
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-04
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.178
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.178
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-05
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.179
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.179
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-06
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.180
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.180
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-07
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.181
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.181
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-08
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.182
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.182
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-09
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.183
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.183
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-10
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.184
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.184
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-11
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.185
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.185
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-12
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.186
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.186
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-13
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.187
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.187
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-14
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.188
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.188
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-15
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.189
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.189
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-16
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.190
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.190
+        }
+
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-17
+	service_description	check netsim disk
+	check_command		check_netsim_disk!141.137.208.23!10.151.192.191
+	event_handler		delete_netsim_backupfiles!141.137.208.23!10.151.192.191
+	}
+
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-18
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.192
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.192
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-19
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.193
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.193
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-20
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.194
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.194
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-21
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.195
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.195
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-22
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.196
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.196
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-23
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.197
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.197
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-24
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.198
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.198
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-25
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.199
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.199
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-26
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.200
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.200
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-27
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.201
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.201
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-28
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.202
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.202
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-29
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.203
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.203
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-30
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.204
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.204
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-31
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.205
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.205
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-32
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.206
+      event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.206
+        }
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-33
+	service_description	check netsim disk
+	check_command		check_netsim_disk!141.137.208.23!10.151.192.207
+	event_handler		delete_netsim_backupfiles!141.137.208.23!10.151.192.207
+	}
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-34
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.208
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.208
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-35
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.209
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.209
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-36
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.210
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.210
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-37
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.211
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.211
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-38
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.212
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.212
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-39
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.213
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.213
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-40
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.214
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.214
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-41
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.215
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.215
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-42
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.216
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.216
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-43
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.217
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.217
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-44
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.218
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.218
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-45
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.219
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.219
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-46
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.220
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.220
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-47
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.221
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.221
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-48
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.222
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.222
+        }
+
+
+define service{
+	use			generic-service
+	host_name		ieatnetsimv5116-49
+	service_description	check netsim disk
+	check_command		check_netsim_disk!141.137.208.23!10.151.192.223
+	event_handler		delete_netsim_backupfiles!141.137.208.23!10.151.192.223
+	}
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-50
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.224
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.224
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-51
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.225
+        event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.225
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-52
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.226
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.226
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-53
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.227
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.227
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-54
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.228
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.228
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-55
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.229
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.229
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-56
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.230
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.230
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-57
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.231
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.231
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-58
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.232
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.232
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-59
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.233
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.233
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-60
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.234
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.234
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-61
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.235
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.235
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-62
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.236
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.236
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-63
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.237
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.237
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-64
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.238
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.238
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-65
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.239
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.239
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-66
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.240
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.240
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-67
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.241
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.241
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-68
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.242
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.242
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-69
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.243
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.243
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-70
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.244
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.244
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-71
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.245
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.245
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-72
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.246
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.246
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-73
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.247
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.247
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-74
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.248
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.248
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-75
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.249
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.249
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-76
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.250
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.250
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-77
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.251
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.251
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-78
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.252
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.252
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-79
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.253
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.253
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-80
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.254
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.254
+        }
+
+define service{
+       use                     generic-service
+        host_name               ieatnetsimv5116-81
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.192.255
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.192.255
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-82
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.0
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.0
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-83
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.1
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.1
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-84
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.2
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.2
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-85
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.3
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.3
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-86
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.4
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.4
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-87
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.5
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.5
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-88
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.6
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.6
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-89
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.7
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.7
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-90
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.8
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.8
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-91
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.9
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.9
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-92
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.10
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.10
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-93
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.11
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.11
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-94
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.12
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.12
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-95
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.63
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.63
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-108
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.76
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.76
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-109
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.77
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.77
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatnetsimv5116-110
+        service_description     check netsim disk
+        check_command           check_netsim_disk!141.137.208.23!10.151.193.78
+       event_handler           delete_netsim_backupfiles!141.137.208.23!10.151.193.78
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatwlvm5116
+        service_description     check workload profiles
+        check_command           check_workloads!141.137.208.23!10.151.193.14
+        }
+
+define service{
+        use                     generic-service
+        host_name               ieatwlvm5116
+        service_description     check workload profiles started
+        check_command           check_workloads_started!141.137.208.23!10.151.193.14
+        }
+
